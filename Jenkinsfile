@@ -3,10 +3,12 @@ pipeline {
     stages {
         stage("first stage") {
             steps {
-                sh "ls -al /"
-                def file = readFile "/etc/hosts"
-                echo "Showing file contents..."
-                echo file
+                script {
+                    sh "ls -al /"
+                    def file = readFile "/etc/hosts"
+                    echo "Showing file contents..."
+                    echo file
+                }
             }
         }
     }
