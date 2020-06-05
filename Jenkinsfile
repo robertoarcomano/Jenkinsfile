@@ -8,6 +8,7 @@ pipeline {
                     def file = readFile "/etc/hosts"
                     echo "Showing file contents..."
                     echo file
+                    load "secondJenkinsfile"
                 }
             }
         }
