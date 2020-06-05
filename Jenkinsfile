@@ -4,7 +4,8 @@ pipeline {
         stage("first stage") {
             steps {
                 sh "ls -al /"
-                readFile "/etc/hosts"
+                def file = readFile "/etc/hosts"
+                echo file
             }
         }
     }
