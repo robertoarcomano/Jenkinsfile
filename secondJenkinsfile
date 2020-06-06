@@ -1,6 +1,10 @@
 stage("secondJenkinsfile") {
     echo "I'm secondJenkinsfile"
     docker.image("bash").inside() {
+        def file = readFile "/etc/hosts"
+        echo "Showing file contents..."
+        echo file
+        sh("cat /etc/hosts")
         sh("ls -al")
         sh("pwd")
         sh("ls -al /var/run/docker.sock")
