@@ -2,5 +2,9 @@ stage("secondJenkinsfile") {
     echo "I'm secondJenkinsfile"
     docker.image("bash").inside() {
         sh("ls -al")
+        sh("pwd")
+        sh("ls -al /var/run/docker.sock")
+        sh("df -h")
+        sh("mount")
     }
 }
