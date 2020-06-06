@@ -1,4 +1,6 @@
 stage("secondJenkinsfile") {
     echo "I'm secondJenkinsfile"
-    docker.image("bash").run("ls")
+    docker.image("bash").inside() {
+        sh("ls -al")
+    }
 }
