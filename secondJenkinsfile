@@ -6,5 +6,6 @@ stage("secondJenkinsfile") {
         sh("ls -al /var/run/docker.sock")
         sh("df -h")
         sh("mount")
+        sh("hostname")
     }
 }
