@@ -6,8 +6,7 @@ pipeline {
                 script {
                     def content = readFile "/etc/hosts"
                     sh "cp /etc/hosts ."
-                    def tmpDir = pwd tmp:false
-                    echo tmpDir
+                    echo pwd tmp:false
                     sh "ls -al"
                     writeFile file: "temp", text: content
                 }
