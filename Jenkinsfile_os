@@ -5,6 +5,7 @@ stage("os") {
         sh "pwd"
         sh "ls -al"
         sh "cat hosts_new"
+        archiveArtifacts 'hosts_new'
         deleteDir()
     }
 }
