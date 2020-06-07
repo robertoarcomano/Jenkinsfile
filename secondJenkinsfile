@@ -2,6 +2,7 @@ stage("secondJenkinsfile") {
     echo "I'm secondJenkinsfile"
     docker.image("bash").inside() {
         def content = readFile "/etc/hosts"
+        sh "ls -al /"
         dir("/tmp") {
             echo pwd
             writeFile file: "temp", text: content
