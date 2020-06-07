@@ -1,6 +1,8 @@
 stage("function") {
-    def check_file_host() {
-        sh "cat /etc/hosts"
+    script {
+        def check_file_host() {
+            sh "cat /etc/hosts"
+        }
+        check_file_host()
     }
-    check_file_host()
 }
