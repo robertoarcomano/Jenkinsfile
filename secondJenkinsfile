@@ -3,9 +3,11 @@ stage("secondJenkinsfile") {
     docker.image("bash").inside() {
         def file = readFile "/etc/hosts"
         writeFile file: "/tmp/temp", text: file
-        echo "Showing file contents..."
+        echo "Showing /etc/hosts file contents..."
         echo file
-        sh("cat /etc/hosts")
+        echo "Showing /tmp/temp file contents..."
+        sh("cat /tmp/temp")
+        echo "ls -al"
         sh("ls -al")
         sh("pwd")
         sh("ls -al /var/run/docker.sock")
