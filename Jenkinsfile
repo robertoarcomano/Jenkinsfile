@@ -5,12 +5,10 @@ pipeline {
             steps {
                 script {
                     def content = readFile "/etc/hosts"
-                    sh "ls -al /"
-                    dir("/tmp/") {
-                        echo pwd
-                        sh "ls -al"
-                        writeFile file: "temp", text: content
-                    }
+                    sh "cp /etc/hosts ."
+                    echo pwd
+                    sh "ls -al"
+                    writeFile file: "temp", text: content
                 }
                 script {
                     sh "ls -al /"
