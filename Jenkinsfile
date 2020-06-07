@@ -5,6 +5,7 @@ pipeline {
             steps {
                 script {
                     load "Jenkinsfile_os"
+                    load "Jenkinsfile_docker"
                 }
 
 //                     sh "cp /etc/hosts /tmp/hosts1"

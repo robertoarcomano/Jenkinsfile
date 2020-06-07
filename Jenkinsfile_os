@@ -1,8 +1,10 @@
-def content1 = readFile "/etc/hosts"
-dir ("temporary") {
-    writeFile file: "hosts_new", text: content1
-    sh "pwd"
-    sh "ls -al"
-    sh "cat hosts_new"
-    deleteDir()
+stage("os") {
+    def content = readFile "/etc/hosts"
+    dir ("temporary") {
+        writeFile file: "hosts_new", text: content
+        sh "pwd"
+        sh "ls -al"
+        sh "cat hosts_new"
+        deleteDir()
+    }
 }

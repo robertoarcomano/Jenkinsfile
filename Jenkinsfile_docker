@@ -1,0 +1,5 @@
+stage("docker") {
+    docker.image("bash").inside() {
+        load "Jenkinsfile_os"
+    }
+}
