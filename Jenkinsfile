@@ -7,6 +7,8 @@ pipeline {
                     def content1 = readFile "/etc/hosts"
                     dir ("temporary") {
                         writeFile file: "hosts_new", text: content1
+                        sh "pwd"
+                        sh "ls -al"
                         sh "cat hosts_new"
                     }
 //                     sh "cp /etc/hosts /tmp/hosts1"
