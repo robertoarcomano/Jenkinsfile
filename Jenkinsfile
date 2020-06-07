@@ -6,7 +6,7 @@ pipeline {
                 script {
                     def content1 = readFile "/etc/hosts"
                     dir ("/tmp") {
-                        writeFile file: "hosts_new", text: content
+                        writeFile file: "hosts_new", text: content1
                         sh "sync"
                     }
                     sh "cat /tmp/hosts_new"
