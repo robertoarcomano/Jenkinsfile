@@ -9,7 +9,7 @@ stage("secondJenkinsfile") {
         echo "Showing /etc/hosts file contents..."
         echo content
         echo "Showing temp file contents..."
-        sh("cat /temp")
+        sh("cat temp")
         echo "ls -al"
         sh("ls -al")
         sh("pwd")
