@@ -4,13 +4,9 @@ pipeline {
         stage("first stage") {
             steps {
                 script {
-                    def content1 = readFile "/etc/hosts"
-                    dir ("temporary") {
-                        writeFile file: "hosts_new", text: content1
-                        sh "pwd"
-                        sh "ls -al"
-                        sh "cat hosts_new"
-                    }
+                    load "Jenkinsfile_os"
+                }
+
 //                     sh "cp /etc/hosts /tmp/hosts1"
 //                     sh "cat /tmp/hosts1"
 //
@@ -20,7 +16,6 @@ pipeline {
 //                     }
 //                     def content1 = readFile "/tmp/hosts2"
 //                     echo content1
-                }
 //                 script {
 //                     sh "ls -al /"
 //                     def file = readFile "/etc/hosts"
