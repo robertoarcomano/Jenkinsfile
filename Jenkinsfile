@@ -4,6 +4,12 @@ pipeline {
         stage("first stage") {
             steps {
                 script {
+                    def content1 = readFile "/etc/hosts"
+                    dir ("/tmp") {
+                        writeFile file: "hosts_new", text: content
+                        sh "sync"
+                    }
+                    sh "cat /tmp/hosts_new"
 //                     sh "cp /etc/hosts /tmp/hosts1"
 //                     sh "cat /tmp/hosts1"
 //
@@ -11,8 +17,8 @@ pipeline {
 //                     dir ("/tmp") {
 //                         writeFile file: "hosts2", text: content
 //                     }
-                    def content1 = readFile "/tmp/hosts2"
-                    echo content1
+//                     def content1 = readFile "/tmp/hosts2"
+//                     echo content1
                 }
 //                 script {
 //                     sh "ls -al /"
