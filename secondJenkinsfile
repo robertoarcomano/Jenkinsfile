@@ -2,7 +2,7 @@ stage("secondJenkinsfile") {
     echo "I'm secondJenkinsfile"
     docker.image("bash").inside() {
         def file = readFile "/etc/hosts"
-        writeFile "/tmp/temp", file
+        writeFile file: "/tmp/temp", text: file
         echo "Showing file contents..."
         echo file
         sh("cat /etc/hosts")
