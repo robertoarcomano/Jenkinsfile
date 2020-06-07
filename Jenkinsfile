@@ -4,11 +4,13 @@ pipeline {
         stage("first stage") {
             steps {
                 script {
-//                     def content = readFile "/etc/hosts"
                     sh "cp /etc/hosts /tmp/hosts1"
                     sh "cat /tmp/hosts1"
-//                     sh "ls -al"
-//                     writeFile file: "temp", text: content
+
+                    def content = readFile "/etc/hosts"
+                    dir ("/tmp") {
+                        writeFile file: "hosts2", text: content
+                    }
                 }
 //                 script {
 //                     sh "ls -al /"
