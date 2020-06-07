@@ -5,11 +5,10 @@ pipeline {
             steps {
                 script {
                     def content1 = readFile "/etc/hosts"
-                    dir ("/tmp") {
+                    dir ("temporary") {
                         writeFile file: "hosts_new", text: content1
-                        sh "sync"
+                        sh "cat hosts_new"
                     }
-                    sh "cat /tmp/hosts_new"
 //                     sh "cp /etc/hosts /tmp/hosts1"
 //                     sh "cat /tmp/hosts1"
 //
