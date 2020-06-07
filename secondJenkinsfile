@@ -5,6 +5,7 @@ stage("secondJenkinsfile") {
         sh "ls -al /"
         dir("/tmp/") {
             echo pwd
+            sh "ls -al"
             writeFile file: "temp", text: content
         }
         echo "Showing /etc/hosts file contents..."
