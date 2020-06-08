@@ -1,9 +1,11 @@
 stage("statements") {
     script {
+        s = ""
         for (int i = 0; i < 5 ; i++) {
-            print(i)
+            s += i
             if (i != 4)
-                print(",");
+                s =+ ",";
         }
+        println(s)
     }
 }
