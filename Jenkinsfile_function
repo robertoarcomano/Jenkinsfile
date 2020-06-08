@@ -1,5 +1,7 @@
+def external = load "vars/Jenkinsfile_external_function.groovy"
+
 stage("function") {
     script {
-        function2()
+        external.function2()
     }
 }
