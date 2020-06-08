@@ -2,7 +2,7 @@ stage("statements") {
     script {
         for (int i = 0; i < 5 ; i++) {
             print(i)
-            if (i =! 4)
+            if (i != 4)
                 print(",");
         }
     }
