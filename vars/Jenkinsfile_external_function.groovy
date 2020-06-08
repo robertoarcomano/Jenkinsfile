@@ -1,4 +1,4 @@
-def check_file_host() {
-    echo "inside function check_file_host"
+def function2() {
+    echo "inside function2"
     sh "cat /etc/hosts"
 }

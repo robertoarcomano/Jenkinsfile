@@ -1,0 +1,9 @@
+def function1() {
+    echo "inside function1"
+    sh "cat /etc/hosts"
+}
+stage("function") {
+    script {
+        function1()
+    }
+}

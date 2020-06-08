@@ -1,5 +1,5 @@
 stage("function") {
     script {
-        check_file_host()
+        function2()
     }
 }
