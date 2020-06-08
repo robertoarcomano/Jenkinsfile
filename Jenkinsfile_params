@@ -1,0 +1,3 @@
+stage("params") {
+    echo params.params1
+}
