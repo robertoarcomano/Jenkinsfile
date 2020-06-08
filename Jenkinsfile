@@ -7,7 +7,7 @@ pipeline {
                     load "Jenkinsfile_os"
                     load "Jenkinsfile_docker"
                     load "Jenkinsfile_embedded_function"
-                    load "Jenkinsfile_function"
+//                     load "Jenkinsfile_function"
                 }
             }
         }
