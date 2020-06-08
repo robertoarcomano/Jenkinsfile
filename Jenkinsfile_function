@@ -1,3 +1,4 @@
+load "Jenkinsfile_external_function"
 stage("function") {
     script {
         check_file_host()
