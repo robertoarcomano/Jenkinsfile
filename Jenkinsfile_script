@@ -2,6 +2,6 @@ stage("script") {
     echo "script"
     script {
         def var = "var"
+        echo var
     }
-    echo var
 }

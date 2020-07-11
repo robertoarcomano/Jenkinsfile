@@ -2,7 +2,7 @@ def function1(file) {
     echo "inside function1"
     sh "cat " + file
 }
-stage("function") {
+stage("embedded function") {
     script {
         function1("/etc/hosts")
     }
