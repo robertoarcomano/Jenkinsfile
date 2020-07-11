@@ -11,6 +11,7 @@ pipeline {
                     load "Jenkinsfile_embedded_function"
                     load "Jenkinsfile_function"
                     load "Jenkinsfile_script"
+                    load "Jenkinsfile_parallel"
                 }
             }
         }
