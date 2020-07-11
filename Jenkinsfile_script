@@ -1,7 +1,8 @@
 stage("script") {
-    echo "script"
     script {
         def var = "var"
         echo var
+        if (var == "var")
+            echo "var == var"
     }
 }
