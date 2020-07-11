@@ -1,10 +1,14 @@
 stage("parallel") {
     parallel {
         stage("thread 1") {
-            echo "thread 1"
+            steps {
+                echo "thread 1"
+            }
         }
         stage("thread 2") {
-            echo "thread 2"
+            steps {
+                echo "thread 2"
+            }
         }
     }
 }
