@@ -2,9 +2,11 @@ stage("parallel") {
     parallel (
         'thread 1': {
             echo "thread 1"
+            sleep 5
         },
         'thread 2': {
             echo "thread 2"
+            sleep 5
         }
     )
 }
