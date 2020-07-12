@@ -15,8 +15,8 @@ stage("parallel") {
 //                    echo "thread 2 - " + i
 //                    sleep 1
 //                }
-//            }
-            echo "step 2"
+                echo "step 2"
+            }
         }
     )
 }
