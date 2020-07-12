@@ -3,6 +3,11 @@ stage("parallel") {
         'thread 1': {
             sleep 1
             echo "thread 1 - 1"
+            script {
+                for (i in 1..10) {
+                    echo i
+                }
+            }
             sleep 2
             echo "thread 1 - 2"
         },
