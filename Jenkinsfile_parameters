@@ -1,7 +1,6 @@
 stage("parameters") {
     script {
-        def selection = input
-            message: '<message>',
+        def selection = input message: '<message>',
             parameters: [
                 run(description: 'Choose a run of the project',
                     filter: 'ALL',
