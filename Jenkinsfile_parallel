@@ -6,6 +6,7 @@ stage("parallel") {
 //                    echo "thread 1 - " + i
 //                    sleep 1
 //                }
+                def v="ok"
                 echo "step 1"
             }
         },
