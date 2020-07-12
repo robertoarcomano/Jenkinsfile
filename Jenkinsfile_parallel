@@ -1,23 +1,16 @@
 stage("parallel") {
     parallel (
         'thread 1': {
-            script {
-                for (i in 1..10) {
-                    echo "thread 1 - "
-                    //sh "sleep 1"
-                }
-                def v="ok"
-                echo "step 1"
-            }
+            sleep 1
+            echo "thread 1 - 1"
+            sleep 2
+            echo "thread 1 - 2"
         },
         'thread 2': {
-            script {
-//                for (int i in 1..10) {
-//                    echo "thread 2 - " + i
-//                    sleep 1
-//                }
-                echo "step 2"
-            }
+            sleep 2
+            echo "thread 2 - 1"
+            sleep 1
+            echo "thread 2 - 2"
         }
     )
 }
