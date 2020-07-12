@@ -1,13 +1,10 @@
 stage("parameters") {
     script {
-        def selection = input message: '<message>',
-            parameters: [
-                run(description: 'Choose a run of the project',
-                    filter: 'ALL',
-                    name: 'RUN',
-                    projectName: 'pipe1'
-                )
-            ]
-        echo "selection is ${selection}"
+        def resp = input message: '<message>',
+        parameters: [string(defaultValue: '',
+        description: 'Enter response 1',
+        name: 'RESPONSE1'), string(defaultValue: '',
+        description: 'Enter response 2', name: 'RESPONSE2')]
+        echo "${resp.RESPONSE1}"
     }
 }
