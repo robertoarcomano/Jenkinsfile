@@ -4,7 +4,7 @@ stage("parallel") {
             script {
                 for (int i in 1..10) {
                     echo "thread 1 - " + i
-                    sleep(time:1)
+                    sleep(1)
                 }
                 def v="ok"
                 echo "step 1"
