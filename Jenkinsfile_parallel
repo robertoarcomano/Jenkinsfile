@@ -5,7 +5,7 @@ stage("parallel") {
             echo "thread 1 - 1"
             script {
                 for (i in 1..10) {
-                    echo new String(i)
+                    echo new Integer(i).toString()
                 }
             }
             sleep 2
