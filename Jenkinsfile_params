@@ -1,3 +1,9 @@
 stage("params") {
     echo params.params1
+    script {
+        if (params.params1 == "-")
+            echo "called by Webhook"
+        else
+            echo "params1: " + params.params1
+    }
 }
