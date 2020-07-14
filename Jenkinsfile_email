@@ -1,5 +1,6 @@
 stage("params") {
-    mail to: EMAIL_RECIPIENT,
+    mail from: root@jenkins.robertoarcomano.it,
+         to: EMAIL_RECIPIENT,
          subject: EMAIL_SUBJECT + ": " + currentBuild.result,
          body: "Console Log: "  + env.BUILD_URL + "console" +
                "\nResult: " + currentBuild.result
