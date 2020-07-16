@@ -1,4 +1,4 @@
-//stage('run-parallel-branches') {
+stage('run-parallel-branches') {
     parallel {
         stage('Test On Windows') {
             steps {
@@ -21,4 +21,4 @@
             }
         }
     }
-//}
+}
