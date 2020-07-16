@@ -5,7 +5,8 @@ pipeline {
             steps {
                 script {
 //                    load "Jenkinsfile_params"
-                   load "Jenkinsfile_parallel"
+//                    load "Jenkinsfile_parallel"
+                   load "Jenkinsfile_parallel_stages"
 //                    load "Jenkinsfile_statements"
 //                    load "Jenkinsfile_os"
 //                    load "Jenkinsfile_docker"
