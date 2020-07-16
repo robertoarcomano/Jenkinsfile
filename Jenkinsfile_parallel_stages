@@ -1,12 +1,24 @@
 stage('run-parallel-branches') {
-  steps {
-    parallel(
-      a: {
-        echo "This is branch a"
-      },
-      b: {
-        echo "This is branch b"
-      }
-    )
-  }
+    parallel {
+        stage('Test On Windows') {
+            steps {
+                echo "Windows"
+            }
+            post {
+                always {
+                    echo "final Windows"
+                }
+            }
+        }
+        stage('Test On Linux') {
+            steps {
+                echo "Linux"
+            }
+            post {
+                always {
+                    echo "final Linux"
+                }
+            }
+        }
+    }
 }
