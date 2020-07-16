@@ -24,8 +24,8 @@ pipeline {
 //                     }
 //                 }
 //             }
-//             steps {
-//                 script {
+            steps {
+                script {
 //                    load "Jenkinsfile_params"
 //                    load "Jenkinsfile_parallel"
                    load "Jenkinsfile_parallel_stages"
@@ -38,8 +38,8 @@ pipeline {
 //                    load "Jenkinsfile_parameters"
 //                    load "Jenkinsfile_credentials"
 //                    load "Jenkinsfile_email"
-//                 }
-//             }
+                }
+            }
         }
     }
 }
