@@ -2,16 +2,30 @@ pipeline {
     agent any
     stages {
         stage("main stage") {
-          steps {
-            parallel(
-              a: stage("stage1") {
-                echo "This is branch a"
-              },
-              b: stage("stage1") {
-                echo "This is branch b"
-              }
-            )
-          }
+            steps {
+                parallel {
+                    stage('Test On Windows') {
+                        steps {
+                            echo "Windows"
+                        }
+                        post {
+                            always {
+                                echo "final Windows"
+                            }
+                        }
+                    }
+                    stage('Test On Linux') {
+                        steps {
+                            echo "Linux"
+                        }
+                        post {
+                            always {
+                                echo "final Linux"
+                            }
+                        }
+                    }
+                }
+            }
 //             steps {
 //                 script {
 //                    load "Jenkinsfile_params"
