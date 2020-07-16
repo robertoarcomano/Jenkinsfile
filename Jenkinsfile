@@ -28,10 +28,9 @@ pipeline {
     }
     post {
         always {
-            echo "ok"
-//             script {
+            script {
 //                    load "Jenkinsfile_params"
-//                load "Jenkinsfile_parallel"
+               load "Jenkinsfile_parallel"
 //                    load "Jenkinsfile_statements"
 //                    load "Jenkinsfile_os"
 //                    load "Jenkinsfile_docker"
@@ -41,7 +40,7 @@ pipeline {
 //                    load "Jenkinsfile_parameters"
 //                    load "Jenkinsfile_credentials"
 //                    load "Jenkinsfile_email"
-//             }
+            }
         }
     }
 }
