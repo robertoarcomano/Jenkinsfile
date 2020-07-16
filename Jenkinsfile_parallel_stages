@@ -1,7 +1,6 @@
 stage("parallel_stages") {
     parallel {
         stage("parallel_stage1") {
-        'thread 1': {
             sleep 1
             echo "11111111111"
             sleep 2
