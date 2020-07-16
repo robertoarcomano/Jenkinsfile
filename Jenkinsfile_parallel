@@ -21,4 +21,9 @@ stage("parallel") {
             parallel(running_set)
         }
     }
+    post {
+        always {
+            echo "finished"
+        }
+    }
 }
