@@ -4,10 +4,10 @@ pipeline {
         stage("main stage") {
           steps {
             parallel(
-              a: {
+              a: stage("stage1") {
                 echo "This is branch a"
               },
-              b: {
+              b: stage("stage1") {
                 echo "This is branch b"
               }
             )
