@@ -2,11 +2,21 @@ pipeline {
     agent any
     stages {
         stage("main stage") {
-            steps {
-                script {
+          steps {
+            parallel(
+              a: {
+                echo "This is branch a"
+              },
+              b: {
+                echo "This is branch b"
+              }
+            )
+          }
+//             steps {
+//                 script {
 //                    load "Jenkinsfile_params"
 //                    load "Jenkinsfile_parallel"
-                   load "Jenkinsfile_parallel_stages"
+//                    load "Jenkinsfile_parallel_stages"
 //                    load "Jenkinsfile_statements"
 //                    load "Jenkinsfile_os"
 //                    load "Jenkinsfile_docker"
@@ -16,8 +26,8 @@ pipeline {
 //                    load "Jenkinsfile_parameters"
 //                    load "Jenkinsfile_credentials"
 //                    load "Jenkinsfile_email"
-                }
-            }
+//                 }
+//             }
         }
     }
 }
