@@ -25,8 +25,9 @@ pipeline {
                 }
             }
         }
-        post {
-            echo "ok"
+    }
+    post {
+        echo "ok"
 //             script {
 //                    load "Jenkinsfile_params"
 //                load "Jenkinsfile_parallel"
@@ -40,6 +41,5 @@ pipeline {
 //                    load "Jenkinsfile_credentials"
 //                    load "Jenkinsfile_email"
 //             }
-        }
     }
 }
