@@ -2,11 +2,33 @@ pipeline {
     agent any
     stages {
         stage("main stage") {
-            steps {
-                script {
+            parallel {
+                stage('Test On Windows') {
+                    steps {
+                        echo "Windows"
+                    }
+                    post {
+                        always {
+                            echo "final Windows"
+                        }
+                    }
+                }
+                stage('Test On Linux') {
+                    steps {
+                        echo "Linux"
+                    }
+                    post {
+                        always {
+                            echo "final Linux"
+                        }
+                    }
+                }
+            }
+//             steps {
+//                 script {
 //                    load "Jenkinsfile_params"
 //                    load "Jenkinsfile_parallel"
-                   load "Jenkinsfile_parallel_stages"
+//                    load "Jenkinsfile_parallel_stages"
 //                    load "Jenkinsfile_statements"
 //                    load "Jenkinsfile_os"
 //                    load "Jenkinsfile_docker"
@@ -16,8 +38,8 @@ pipeline {
 //                    load "Jenkinsfile_parameters"
 //                    load "Jenkinsfile_credentials"
 //                    load "Jenkinsfile_email"
-                }
-            }
+//                 }
+//             }
         }
     }
 }
