@@ -28,16 +28,14 @@ pipeline {
     }
     post {
         always {
-            stage("parallel") {
-                steps {
-                    script {
-                        parallel(running_set)
-                    }
+            steps {
+                script {
+                    parallel(running_set)
                 }
-                post {
-                    always {
-                        echo "finished"
-                    }
+            }
+            post {
+                always {
+                    echo "finished"
                 }
             }
 //             script {
