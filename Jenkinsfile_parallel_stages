@@ -12,5 +12,5 @@ stage("parallel_stages") {
             sleep 1
             echo "22222222222"
         }
-    )
+    ),failFast: false
 }
